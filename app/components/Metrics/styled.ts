@@ -17,7 +17,7 @@ export const StMetricCard = styled.div`
 `;
 
 export const StMetricCardHeader = styled.div`
-    padding: 24px 24px 12px;
+    padding: 18px 10px 12px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;

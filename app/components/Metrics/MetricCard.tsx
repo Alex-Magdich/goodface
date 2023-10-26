@@ -10,6 +10,7 @@ import {
 } from './styled';
 import Dots from '@/public/icons/dots.svg';
 import Arrow from '@/public/icons/arrow.svg';
+import { StSmallButton } from '../Sidebar/styled';
 
 type TProps = {
     title: string;
@@ -21,7 +22,9 @@ const MetricCard: React.FC<TProps> = ({ title, value, score, isPositive }) => (
     <StMetricCard>
         <StMetricCardHeader>
             <div>{title}</div>
-            <Dots />
+            <StSmallButton>
+                <Dots />
+            </StSmallButton>
         </StMetricCardHeader>
         <StMetricCardBody>
             <StMetricCardData>

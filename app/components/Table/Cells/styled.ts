@@ -17,6 +17,7 @@ export const StNameCell = styled.div`
 export const StTextCell = styled.div<{ color: string }>`
     display: flex;
     align-items: center;
+    white-space: nowrap;
     color: ${({ color }) => color || colors.grey500};
 `;
 

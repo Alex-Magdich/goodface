@@ -11,4 +11,7 @@ export const StMain = styled.main`
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
 `;

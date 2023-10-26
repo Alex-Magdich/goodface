@@ -31,4 +31,8 @@ export const StTableRow = styled.div`
     ${tableLayout};
     border-bottom: 1px solid ${colors.grey200};
     font-size: 14px;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: ${colors.grey25};
+    }
 `;
