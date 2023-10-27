@@ -1,4 +1,4 @@
-import { AccountType, TransactionCategory, TransactionType } from './types';
+import { AccountType, TransactionCategory, TransactionType } from './components/Table/types';
 
 export const data = [
     {
@@ -480,5 +480,26 @@ export const data = [
             number: 1234,
             expiry: '06/2024',
         },
+    },
+];
+
+export const metricsData = [
+    {
+        title: 'Total customers',
+        value: '2,420',
+        score: 40,
+        isPositive: true,
+    },
+    {
+        title: 'Members',
+        value: '1,210',
+        score: 10,
+        isPositive: false,
+    },
+    {
+        title: 'Active now',
+        value: '360',
+        score: 20,
+        isPositive: true,
     },
 ];

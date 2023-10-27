@@ -12,7 +12,7 @@ export const StMetricCard = styled.div`
     flex: 1 0 344px;
     border-radius: 8px;
     border: 1px solid ${colors.grey200};
-    background-color: #fff;
+    background-color: ${colors.white};
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
 `;
 

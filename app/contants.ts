@@ -8,7 +8,8 @@ export enum routes {
     settings = '/settings',
 }
 
-export const colors = {
+export const colors: Record<string, string> = {
+    white: '#ffffff',
     grey25: '#FCFCFD',
     grey50: '#F8FAFC',
     grey100: '#EEF2F6',

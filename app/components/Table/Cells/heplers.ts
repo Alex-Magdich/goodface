@@ -6,10 +6,11 @@ export const getFormatedAmount = (value: string | number, type: TransactionType)
     return prefix + value;
 };
 
-export const getColorByCategory = (category: TransactionCategory) => {
-    if (category === TransactionCategory.foodAndDining) return 'pink';
-    if (category === TransactionCategory.income) return 'green';
-    if (category === TransactionCategory.groceries) return 'indigo';
-    if (category === TransactionCategory.subscriptions) return 'blue';
-    return 'grey';
+const categoryColors = {
+    [TransactionCategory.foodAndDining]: 'pink',
+    [TransactionCategory.income]: 'green',
+    [TransactionCategory.groceries]: 'indigo',
+    [TransactionCategory.subscriptions]: 'blue',
 };
+
+export const getColorByCategory = (category: TransactionCategory) => categoryColors[category] || 'grey';

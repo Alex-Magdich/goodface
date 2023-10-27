@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 const activeStyle = css`
     background-color: ${colors.blue400};
-    color: #fff;
+    color: ${colors.white};
     svg,
     span {
         color: currentColor;
