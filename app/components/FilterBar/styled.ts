@@ -1,11 +1,22 @@
 import { colors } from '@/app/contants';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
 
 export const StFilterBar = styled.div`
     display: flex;
     align-items: center;
     gap: 0 12px;
     padding: 24px 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: 1s 0.5s ${fadeIn} ease-out forwards;
+
     div {
         margin-right: auto;
         color: ${colors.grey900};

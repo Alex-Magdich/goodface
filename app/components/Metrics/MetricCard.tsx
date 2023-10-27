@@ -35,7 +35,7 @@ const MetricCard: React.FC<TProps> = ({ title, value, score, isPositive }) => (
                     &nbsp; vs last month
                 </StMetricCardDataScore>
             </StMetricCardData>
-            {getChart(isPositive)}
+            <div className="chart">{getChart(isPositive)}</div>
         </StMetricCardBody>
         <StMetricCardFooter>
             <button>View report</button>

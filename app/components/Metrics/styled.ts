@@ -1,11 +1,32 @@
 import { colors } from '@/app/contants';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-export const StMetrics = styled.div`
-    display: flex;
-    gap: 0 24px;
-    padding: 24px 0 3px;
-    overflow-x: auto;
+const generateDelayAnimationForItems = (count: number, delay: number) => {
+    let css = '';
+    for (let i = 1; i <= count; i++) {
+        css += `&:nth-child(${i}) {animation-delay: ${delay * i}ms};`;
+    }
+    return css;
+};
+
+const fadeIn = keyframes`
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+`;
+
+const moveDown = keyframes`
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+
+const animateLine = keyframes`
+    to {
+        stroke-dashoffset: 0;
+    }
 `;
 
 export const StMetricCard = styled.div`
@@ -14,6 +35,36 @@ export const StMetricCard = styled.div`
     border: 1px solid ${colors.grey200};
     background-color: ${colors.white};
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+
+    .chart {
+        path {
+            &:nth-child(1),
+            &:nth-child(2) {
+                opacity: 0;
+                transform: translateY(50%);
+                animation: 1s 1s ${moveDown} ease-out forwards;
+            }
+
+            &:nth-child(3) {
+                stroke-dasharray: 200;
+                stroke-dashoffset: 200;
+                animation: 1s 0.5s ${animateLine} ease-in forwards;
+            }
+        }
+    }
+`;
+
+export const StMetrics = styled.div`
+    display: flex;
+    gap: 0 24px;
+    padding: 24px 0 3px;
+    overflow-x: auto;
+    ${StMetricCard} {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: 0.5s ${fadeIn} ease-out forwards;
+        ${generateDelayAnimationForItems(3, 200)};
+    }
 `;
 
 export const StMetricCardHeader = styled.div`
